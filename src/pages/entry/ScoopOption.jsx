@@ -5,7 +5,6 @@ export default function ScoopOption({ name, imagePath, updateItemCount }) {
   const [isValid, setIsValid] = useState(true);
   const handleChange = (event) => {
     const currentValue = event.target.value;
-    updateItemCount(name, currentValue);
 
     const currentValueFloat = parseFloat(currentValue);
     const valueIsValid =
@@ -15,6 +14,8 @@ export default function ScoopOption({ name, imagePath, updateItemCount }) {
 
     // validate
     setIsValid(valueIsValid);
+    if (valueIsValid) updateItemCount(name, currentValue);
+    // else updateItemCount(name, 0);
   };
   return (
     <Col xs={12} sm={6} md={4} lg={3} style={{ textAlign: "center" }}>
