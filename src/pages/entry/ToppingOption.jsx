@@ -1,4 +1,4 @@
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Form } from "react-bootstrap";
 
 export default function ToppingOption({ name, imagePath, updateItemCount }) {
   const handleChange = (event) => {
